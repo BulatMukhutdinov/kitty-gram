@@ -1,2 +1,2 @@
-# KittyGram
-Sample kotlin multiplatform projext
+# kitty-gram
+Sample kotlin multiplatform project
