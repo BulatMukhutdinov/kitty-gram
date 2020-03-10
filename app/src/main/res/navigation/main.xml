@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    app:startDestination="@id/kitty_list">
+
+    <fragment
+        android:id="@+id/kitty_list"
+        android:name="tat.mukhutdinov.kittygram.kittyList.KittyListViewModel"
+        android:label="Kitty list"
+        tools:layout="@layout/kitty_list">
+
+        <action
+            android:id="@+id/to_tracking_profiles"
+            app:destination="@id/kitty_profile"
+            app:enterAnim="@anim/nav_enter_anim"
+            app:exitAnim="@anim/nav_exit_anim"
+            app:popEnterAnim="@anim/nav_pop_enter_anim"
+            app:popExitAnim="@anim/nav_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kitty_profile"
+        android:name="tat.mukhutdinov.kittygram.infrastructure.kittyProfile.KittyProfileViewModel"
+        android:label="Kitty profile"
+        tools:layout="@layout/kitty_profile">
+
+        <argument
+            android:name="kitty"
+            app:argType="tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty" />
+    </fragment>
+</navigation>

@@ -1,0 +1,3 @@
+rootProject.name = 'Kitty Gram'
+include ':app', ':shared'
+enableFeaturePreview('GRADLE_METADATA')
