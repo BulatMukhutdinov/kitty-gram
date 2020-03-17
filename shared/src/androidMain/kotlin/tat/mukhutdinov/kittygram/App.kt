@@ -1,12 +1,11 @@
 package tat.mukhutdinov.kittygram
 
 import android.app.Application
-import com.github.aakira.napier.DebugAntilog
-import com.github.aakira.napier.Napier
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import tat.mukhutdinov.kittygram.infrastructure.application
 import tat.mukhutdinov.kittygram.infrastructure.di.DiModules
+import timber.log.Timber
 import kotlin.tat.mukhutdinov.kittygram.BuildConfig
 
 open class App : Application(), KodeinAware {
@@ -21,7 +20,7 @@ open class App : Application(), KodeinAware {
         application = this
 
         if (BuildConfig.DEBUG) {
-            Napier.base(DebugAntilog())
+            Timber.plant(Timber.DebugTree())
         }
     }
 }

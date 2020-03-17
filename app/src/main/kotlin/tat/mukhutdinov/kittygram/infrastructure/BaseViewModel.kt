@@ -9,11 +9,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
-import com.github.aakira.napier.Napier
 import kotlinx.coroutines.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import tat.mukhutdinov.kittygram.infrastructure.util.autoCleared
+import timber.log.Timber
 import kotlin.tat.mukhutdinov.kittygram.BR
 
 abstract class BaseViewModel<V : ViewDataBinding> : Fragment(), KodeinAware {
@@ -29,7 +29,7 @@ abstract class BaseViewModel<V : ViewDataBinding> : Fragment(), KodeinAware {
     protected lateinit var fragmentScope: CoroutineScope
 
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        Napier.e("Unhandled error in coroutines", throwable)
+        Timber.e(throwable)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +75,7 @@ abstract class BaseViewModel<V : ViewDataBinding> : Fragment(), KodeinAware {
         try {
             findNavController().navigate(directions)
         } catch (exception: IllegalArgumentException) {
-            Napier.w("Failed to navigate", exception)
+            Timber.w(exception)
         }
     }
 }

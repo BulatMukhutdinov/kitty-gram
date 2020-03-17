@@ -50,7 +50,6 @@ kotlin {
     val coroutinesVersion = "1.3.3"
     val sqldelightVersion = "1.2.2"
     val serializationVersion = "0.20.0"
-    val napierVersion = "1.2.0"
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
@@ -66,8 +65,6 @@ kotlin {
         implementation("org.kodein.di:kodein-di-erased:6.5.0")
 
         // Utils
-        implementation("com.github.aakira:napier:$napierVersion")
-//
 //        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationVersion")
     }
 
@@ -82,8 +79,7 @@ kotlin {
         implementation("com.squareup.sqldelight:coroutines-extensions-jvm:$sqldelightVersion")
 
         // Utils
-        api("com.github.aakira:napier-android:$napierVersion")
-
+        implementation("com.jakewharton.timber:timber:4.7.1")
 //        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializationVersion")
     }
 
@@ -95,11 +91,6 @@ kotlin {
         implementation("com.squareup.sqldelight:native-driver:$sqldelightVersion")
 
         // Utils
-//        implementation("com.github.aakira:napier-ios:$napierVersion")
-//        implementation("com.github.aakira:napier-iosX64:$napierVersion")
-//        implementation("com.github.aakira:napier-iosArm32:$napierVersion")
-//        implementation("com.github.aakira:napier-iosArm64:$napierVersion")
-
 //        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serializationVersion")
     }
 }
