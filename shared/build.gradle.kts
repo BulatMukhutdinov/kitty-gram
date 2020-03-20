@@ -5,7 +5,7 @@ plugins {
     kotlin("multiplatform")
     id("kotlin-android-extensions")
     id("com.squareup.sqldelight")
-//    id ("kotlinx-serialization")
+    id("kotlinx-serialization")
 }
 
 android {
@@ -49,7 +49,7 @@ kotlin {
 
     val coroutinesVersion = "1.3.3"
     val sqldelightVersion = "1.2.2"
-    val serializationVersion = "0.20.0"
+    val ktor_version: String by rootProject.extra
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
@@ -64,8 +64,10 @@ kotlin {
         // Di
         implementation("org.kodein.di:kodein-di-erased:6.5.0")
 
-        // Utils
-//        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationVersion")
+        // Networking
+        implementation("io.ktor:ktor-client-core:$ktor_version")
+        implementation("io.ktor:ktor-client-json:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization:$ktor_version")
     }
 
     sourceSets["androidMain"].dependencies {
@@ -78,20 +80,26 @@ kotlin {
         implementation("com.squareup.sqldelight:android-driver:$sqldelightVersion")
         implementation("com.squareup.sqldelight:coroutines-extensions-jvm:$sqldelightVersion")
 
+        //Networking
+        implementation("io.ktor:ktor-client-android:$ktor_version")
+        implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
+
         // Utils
-        implementation("com.jakewharton.timber:timber:4.7.1")
-//        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializationVersion")
+        api("com.jakewharton.timber:timber:4.7.1")
     }
 
     sourceSets["iosMain"].dependencies {
         // Coroutines
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
 
         // Database
         implementation("com.squareup.sqldelight:native-driver:$sqldelightVersion")
 
-        // Utils
-//        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serializationVersion")
+        // Networking
+        implementation("io.ktor:ktor-client-ios:$ktor_version")
+        implementation("io.ktor:ktor-client-json-native:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization-native:$ktor_version")
     }
 }
 

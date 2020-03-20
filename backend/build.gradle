@@ -1,0 +1,33 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url 'https://kotlin.bintray.com/ktor' }
+    maven { url 'https://kotlin.bintray.com/kotlinx' }
+}
+
+sourceSets {
+    main.kotlin.srcDirs = main.java.srcDirs = ['src/main/kotlin/']
+    test.kotlin.srcDirs = test.java.srcDirs = ['test/kotlin/']
+
+    main.resources.srcDirs = ['src/main/res']
+    test.resources.srcDirs = ['test/res']
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    implementation "ch.qos.logback:logback-classic:1.2.3"
+
+    implementation "io.ktor:ktor-server-cio:$ktor_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-gson:$ktor_version"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-gson:$ktor_version"
+    implementation "io.ktor:ktor-client-logging-jvm:$ktor_version"
+}

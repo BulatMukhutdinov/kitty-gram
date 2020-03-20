@@ -5,4 +5,6 @@ import tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty
 interface KittyListDomain {
 
     suspend fun getAll(): List<Kitty>
+
+    suspend fun refresh(): List<Kitty>
 }

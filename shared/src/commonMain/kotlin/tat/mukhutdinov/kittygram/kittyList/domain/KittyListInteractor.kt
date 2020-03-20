@@ -9,4 +9,10 @@ class KittyListInteractor(private val gateway: KittyListGateway) : KittyListDoma
     override suspend fun getAll(): List<Kitty> =
         gateway.getAll()
             .sortedBy(Kitty::breed)
+
+    override suspend fun refresh(): List<Kitty> {
+        gateway.refresh()
+
+        return getAll()
+    }
 }

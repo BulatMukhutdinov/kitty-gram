@@ -12,6 +12,7 @@
 		59BD0434321A4EC49988087D /* KittyListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD07BCBFA851F440BD11CC /* KittyListItemView.swift */; };
 		9E2F1F69241694FA00927351 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9E2F1F68241694FA00927351 /* KingfisherSwiftUI */; };
 		9E2F1F6B2416A92A00927351 /* KittyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2F1F6A2416A92A00927351 /* KittyListViewModel.swift */; };
+		9E43637424221F1500470E0F /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 9E43637324221F1500470E0F /* SwiftUIRefresh */; };
 		9EAB03CA240E86BA000D6BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB03C9240E86BA000D6BC2 /* AppDelegate.swift */; };
 		9EAB03CC240E86BA000D6BC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB03CB240E86BA000D6BC2 /* SceneDelegate.swift */; };
 		9EAB03D0240E86BD000D6BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB03CF240E86BD000D6BC2 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E43637424221F1500470E0F /* SwiftUIRefresh in Frameworks */,
 				9E2F1F69241694FA00927351 /* KingfisherSwiftUI in Frameworks */,
 				9EAB03DF240E8C3D000D6BC2 /* shared.framework in Frameworks */,
 			);
@@ -165,6 +167,7 @@
 			name = kittygram;
 			packageProductDependencies = (
 				9E2F1F68241694FA00927351 /* KingfisherSwiftUI */,
+				9E43637324221F1500470E0F /* SwiftUIRefresh */,
 			);
 			productName = kittygram;
 			productReference = 9EAB03C6240E86BA000D6BC2 /* kittygram.app */;
@@ -196,6 +199,7 @@
 			mainGroup = 9EAB03BD240E86BA000D6BC2;
 			packageReferences = (
 				9E2F1F67241694FA00927351 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				9E43637224221F1400470E0F /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 			);
 			productRefGroup = 9EAB03C7240E86BA000D6BC2 /* Products */;
 			projectDirPath = "";
@@ -453,6 +457,14 @@
 				minimumVersion = 5.13.2;
 			};
 		};
+		9E43637224221F1400470E0F /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -460,6 +472,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E2F1F67241694FA00927351 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
+		};
+		9E43637324221F1500470E0F /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E43637224221F1400470E0F /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

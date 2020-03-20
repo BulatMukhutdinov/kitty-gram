@@ -8,11 +8,11 @@
 
         <variable
             name="kitty"
-            type="tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty" />
+            type="tat.mukhutdinov.kittygram.kittyList.domain.model.tat.mukhutdinov.kittygram.Kitty" />
 
         <variable
             name="bindings"
-            type="tat.mukhutdinov.kittygram.infrastructure.kittyProfile.KittyProfileBindings" />
+            type="tat.mukhutdinov.kittygram.kittyProfile.KittyProfileBindings" />
     </data>
 
     <ScrollView

@@ -11,4 +11,8 @@ class KittyListIosInteractor(private val kittyListDomain: KittyListDomain) {
     fun getAll(result: (List<Kitty>) -> Unit) {
         GlobalScope.launch(MainDispatcher) { result(kittyListDomain.getAll()) }
     }
+
+    fun refresh(result: (List<Kitty>) -> Unit) {
+        GlobalScope.launch(MainDispatcher) { result(kittyListDomain.refresh()) }
+    }
 }

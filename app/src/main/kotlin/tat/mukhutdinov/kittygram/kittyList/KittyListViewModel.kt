@@ -47,5 +47,15 @@ class KittyListViewModel : BaseViewModel<KittyListBinding>(), KittyListBindings 
         list.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+
+        viewBinding.refresh.setOnRefreshListener {
+            viewScope.launch {
+                val refreshed = domain.refresh()
+
+                viewBinding.refresh.isRefreshing = false
+
+                list.postValue(refreshed)
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/kitty_list"
         android:name="tat.mukhutdinov.kittygram.kittyList.KittyListViewModel"
-        android:label="Kitty list"
+        android:label="tat.mukhutdinov.kittygram.Kitty list"
         tools:layout="@layout/kitty_list">
 
         <action
@@ -22,12 +22,12 @@
 
     <fragment
         android:id="@+id/kitty_profile"
-        android:name="tat.mukhutdinov.kittygram.infrastructure.kittyProfile.KittyProfileViewModel"
-        android:label="Kitty profile"
+        android:name="tat.mukhutdinov.kittygram.kittyProfile.KittyProfileViewModel"
+        android:label="tat.mukhutdinov.kittygram.Kitty profile"
         tools:layout="@layout/kitty_profile">
 
         <argument
             android:name="kitty"
-            app:argType="tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty" />
+            app:argType="tat.mukhutdinov.kittygram.kittyList.domain.model.tat.mukhutdinov.kittygram.Kitty" />
     </fragment>
 </navigation>

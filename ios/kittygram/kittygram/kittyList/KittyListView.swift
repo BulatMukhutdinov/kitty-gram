@@ -1,10 +1,14 @@
 import SwiftUI
 import shared
+import SwiftUIRefresh
 
 struct KittyListView: View {
     
     @ObservedObject
     var viewModel = KittyListViewModel()
+    
+    @State
+    private var isRefreshing = false
     
     var body: some View {
         NavigationView {
@@ -12,6 +16,10 @@ struct KittyListView: View {
                 NavigationLink(destination: KittyProfileView(kitty: kitty)){
                     KittyListItemView(kitty: kitty)
                 }
+            }
+            .pullToRefresh(isShowing: $isRefreshing) {
+                self.viewModel.refresh()
+                self.isRefreshing = false
             }
             .navigationBarTitle(Text("Kitties"))
         }

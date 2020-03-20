@@ -4,5 +4,7 @@ import tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty
 
 interface KittyListGateway {
 
-    suspend fun getAll():List<Kitty>
+    suspend fun getAll(): List<Kitty>
+
+    suspend fun refresh()
 }

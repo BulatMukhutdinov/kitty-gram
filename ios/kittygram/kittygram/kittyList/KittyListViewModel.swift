@@ -5,16 +5,18 @@ import shared
 final class KittyListViewModel: ObservableObject {
     
     @Published
-    var kitties = [Kitty]()
+    var kitties = [Kitty_]()
     
     private let interactor = DiKt.getKittyListDomain()
     
     init() {
-        refresh()
+        interactor.getAll { kitties in
+            self.kitties = kitties
+        }
     }
     
     func refresh() {
-        interactor.getAll { kitties in
+        interactor.refresh { kitties in
             self.kitties = kitties
         }
     }

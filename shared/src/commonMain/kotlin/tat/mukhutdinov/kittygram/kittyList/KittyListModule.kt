@@ -7,14 +7,14 @@ import org.kodein.di.erased.provider
 import tat.mukhutdinov.kittygram.kittyList.domain.KittyListInteractor
 import tat.mukhutdinov.kittygram.kittyList.domain.boundary.KittyListDomain
 import tat.mukhutdinov.kittygram.kittyList.domain.boundary.KittyListGateway
-import tat.mukhutdinov.kittygram.kittyList.gateway.KittyListLocalGateway
+import tat.mukhutdinov.kittygram.kittyList.gateway.KittyListBoundGateway
 
 object KittyListModule {
 
     val module = Kodein.Module("CommonKittyListModule") {
 
         bind<KittyListGateway>() with provider {
-            KittyListLocalGateway(instance())
+            KittyListBoundGateway(instance(), instance())
         }
 
         bind<KittyListDomain>() with provider {

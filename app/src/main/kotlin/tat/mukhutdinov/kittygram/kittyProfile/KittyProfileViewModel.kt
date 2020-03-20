@@ -1,4 +1,4 @@
-package tat.mukhutdinov.kittygram.infrastructure.kittyProfile
+package tat.mukhutdinov.kittygram.kittyProfile
 
 import android.os.Bundle
 import android.view.View

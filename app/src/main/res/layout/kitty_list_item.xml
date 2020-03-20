@@ -8,7 +8,7 @@
 
         <variable
             name="item"
-            type="tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty" />
+            type="tat.mukhutdinov.kittygram.kittyList.domain.model.tat.mukhutdinov.kittygram.Kitty" />
 
         <variable
             name="bindings"
@@ -31,7 +31,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/icon_background"
-            app:image="@{item.icon}"
+            app:image="@{item.thumb}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
@@ -57,7 +57,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="3"
-            android:text="@{item.description}"
+            android:text="@{item.about}"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/breed"
             app:layout_constraintStart_toStartOf="@id/breed"
