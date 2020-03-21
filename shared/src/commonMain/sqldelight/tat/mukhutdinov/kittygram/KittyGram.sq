@@ -1,4 +1,4 @@
-CREATE TABLE tat.mukhutdinov.kittygram.Kitty (
+CREATE TABLE Kitty (
   breed TEXT NOT NULL PRIMARY KEY,
   description TEXT NOT NULL,
   icon TEXT NOT NULL,
@@ -6,15 +6,15 @@ CREATE TABLE tat.mukhutdinov.kittygram.Kitty (
   about TEXT NOT NULL
 );
 
-CREATE INDEX kitty_breed ON tat.mukhutdinov.kittygram.Kitty(breed);
+CREATE INDEX kitty_breed ON Kitty(breed);
 
 selectAll:
 SELECT *
-FROM tat.mukhutdinov.kittygram.Kitty;
+FROM Kitty;
 
 insert:
-INSERT INTO tat.mukhutdinov.kittygram.Kitty(breed, description, icon, thumb, about)
+INSERT INTO Kitty(breed, description, icon, thumb, about)
 VALUES ?;
 
 clear:
-DELETE FROM tat.mukhutdinov.kittygram.Kitty;
+DELETE FROM Kitty;

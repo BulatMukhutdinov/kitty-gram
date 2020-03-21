@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import com.google.android.material.transition.MaterialSharedAxis
 import kotlinx.coroutines.launch
 import org.kodein.di.generic.instance
 import tat.mukhutdinov.kittygram.infrastructure.BaseViewModel
-import tat.mukhutdinov.kittygram.kittyList.KittyListViewModelDirections.Companion.toTrackingProfiles
+import tat.mukhutdinov.kittygram.kittyList.KittyListViewModelDirections.Companion.toKittyProfile
 import tat.mukhutdinov.kittygram.kittyList.domain.boundary.KittyListDomain
 import tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty
 import tat.mukhutdinov.kittygram.kittyList.item.KittyListAdapter
@@ -26,6 +29,12 @@ class KittyListViewModel : BaseViewModel<KittyListBinding>(), KittyListBindings 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val backward = MaterialSharedAxis.create(requireContext(), MaterialSharedAxis.Z, true)
+        enterTransition = backward
+
+        val forward = MaterialSharedAxis.create(requireContext(), MaterialSharedAxis.Z, false)
+        exitTransition = forward
+
         fragmentScope.launch {
             list.postValue(domain.getAll())
         }
@@ -36,8 +45,10 @@ class KittyListViewModel : BaseViewModel<KittyListBinding>(), KittyListBindings 
 
         val adapter = KittyListAdapter(object : KittyListItemBindings {
 
-            override fun onItemClicked(item: Kitty) {
-                navigate(toTrackingProfiles(item))
+            override fun onItemClicked(view: View, item: Kitty) {
+                val extras: FragmentNavigator.Extras = FragmentNavigatorExtras(view to item.breed)
+
+                navigate(toKittyProfile(item), extras)
             }
         })
 

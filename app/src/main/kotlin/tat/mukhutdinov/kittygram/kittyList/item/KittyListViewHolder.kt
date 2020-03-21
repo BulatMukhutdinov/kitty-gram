@@ -25,6 +25,7 @@ class KittyListViewHolder(
 
         viewBinding.item = item
         viewBinding.bindings = bindings
+        viewBinding.root.transitionName = item.breed
         viewBinding.executePendingBindings()
     }
 

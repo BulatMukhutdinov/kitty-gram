@@ -12,12 +12,8 @@
         tools:layout="@layout/kitty_list">
 
         <action
-            android:id="@+id/to_tracking_profiles"
-            app:destination="@id/kitty_profile"
-            app:enterAnim="@anim/nav_enter_anim"
-            app:exitAnim="@anim/nav_exit_anim"
-            app:popEnterAnim="@anim/nav_pop_enter_anim"
-            app:popExitAnim="@anim/nav_pop_exit_anim" />
+            android:id="@+id/to_kitty_profile"
+            app:destination="@id/kitty_profile" />
     </fragment>
 
     <fragment
@@ -28,6 +24,6 @@
 
         <argument
             android:name="kitty"
-            app:argType="tat.mukhutdinov.kittygram.kittyList.domain.model.tat.mukhutdinov.kittygram.Kitty" />
+            app:argType="tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty" />
     </fragment>
 </navigation>

@@ -8,7 +8,7 @@
 
         <variable
             name="item"
-            type="tat.mukhutdinov.kittygram.kittyList.domain.model.tat.mukhutdinov.kittygram.Kitty" />
+            type="tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty" />
 
         <variable
             name="bindings"
@@ -21,7 +21,7 @@
         android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="@{() -> bindings.onItemClicked(item)}"
+        android:onClick="@{(view) -> bindings.onItemClicked(view, item)}"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 

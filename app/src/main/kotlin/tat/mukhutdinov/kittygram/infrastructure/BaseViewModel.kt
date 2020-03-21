@@ -8,8 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
+import androidx.navigation.Navigator
 import androidx.navigation.fragment.findNavController
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import tat.mukhutdinov.kittygram.infrastructure.util.autoCleared
@@ -71,9 +76,9 @@ abstract class BaseViewModel<V : ViewDataBinding> : Fragment(), KodeinAware {
         super.onDestroy()
     }
 
-    protected fun navigate(directions: NavDirections) {
+    protected fun navigate(direction: NavDirections, extras: Navigator.Extras? = null) {
         try {
-            findNavController().navigate(directions)
+            findNavController().navigate(direction.actionId, direction.arguments, null, extras)
         } catch (exception: IllegalArgumentException) {
             Timber.w(exception)
         }
