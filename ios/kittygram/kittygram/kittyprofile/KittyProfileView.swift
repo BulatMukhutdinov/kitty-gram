@@ -12,9 +12,10 @@ struct KittyProfileView: View {
         VStack(alignment: .leading) {
             KFImage(URL(string: kitty.icon))
                 .resizable()
+                .padding()
                 .aspectRatio(contentMode: .fill)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: iconHeight)
-            
+                
             Text(kitty.breed)
                 .font(.system(size: 20, weight: .semibold))
                 .padding(.bottom)
@@ -31,6 +32,7 @@ struct KittyProfileView: View {
 struct KittyProfile_Previews: PreviewProvider {
     
     static var previews: some View {
-        KittyProfileView(kitty: Kitty_(thumb:"", icon: "https://www.royal-canin.ru/upload/iblock/a9c/glavnaya.jpg", breed: "Абиссинская", about:"", description: "Как правило, по своему характеру абиссинские кошки весьма активны, они стремятся принимать участие во всех домашних делах. Могут быть очень ласковы, но только на своих условиях и по настроению. Необыкновенно обаятельны, но иногда бывают очень озорными. Эти игривые, подвижные создания хорошо уживутся с любым другим домашним животным, которое сможет стать им товарищем по играм. Они сильно привязываются к людям и стараются всегда находиться рядом с ними. Все эти особенности характера и поведения абиссинской кошки не дадут ее хозяину заскучать или почувствовать себя одиноким."))
+        KittyProfileView(kitty: Kitty_(thumb:"https://cdn.royalcanin-weshare-online.io/ZPpjHGsBIYfdNSoCVRpl/v1/bc13bl-hub-abyssinian-adult-standing?w=120&auto=compress&fm=jpg", icon: "https://cdn.royalcanin-weshare-online.io/lGljHGsBG95Xk-RBjPg2/v1/bc13h-hub-abyssinian-adult-black-and-white?w=480&auto=compress&fm=jpg", breed: "Абиссинская", about:"<i>Страна</i>: Эфиопия<br><i>Шерсть</i>: Короткошерстные породы<br><i>Размерная группа</i>: Средние", description: "Абиссинские кошки могут быть очень ласковыми, но только на своих условиях и по настроению. Они очень обаятельны, но могут быть чрезмерно озорными.<br><br>Абиссинская кошка игривая и активная, она хорошо подходит на роль товарища по играм. По мере взросления она крепко привязывается к людям и старается всегда находиться рядом с ними. Абиссинская кошка — общительная, энергичная, преданная и довольно общительная порода.")
+        )
     }
 }

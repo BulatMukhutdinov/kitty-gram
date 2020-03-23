@@ -20,6 +20,7 @@
 		9EAB03D6240E86BD000D6BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB03D4240E86BD000D6BC2 /* LaunchScreen.storyboard */; };
 		9EAB03DF240E8C3D000D6BC2 /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB03DE240E8C3D000D6BC2 /* shared.framework */; };
 		9EAB03E0240E8C3D000D6BC2 /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB03DE240E8C3D000D6BC2 /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EFD935E2428BAD20065C0CD /* HtmlTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD935D2428BAD20065C0CD /* HtmlTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		9EAB03D5240E86BD000D6BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EAB03D7240E86BD000D6BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EAB03DE240E8C3D000D6BC2 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
+		9EFD935D2428BAD20065C0CD /* HtmlTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		59BD001BDAF0A1886708938E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				9EFD935D2428BAD20065C0CD /* HtmlTextView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				9EAB03CC240E86BA000D6BC2 /* SceneDelegate.swift in Sources */,
 				59BD03BE261FE5E84ACA0A47 /* KittyListView.swift in Sources */,
 				59BD0434321A4EC49988087D /* KittyListItemView.swift in Sources */,
+				9EFD935E2428BAD20065C0CD /* HtmlTextView.swift in Sources */,
 				59BD0306C3A177A5E4FD3049 /* KittyProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

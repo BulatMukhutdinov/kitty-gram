@@ -35,14 +35,15 @@ class KittyListViewHolder(
         viewBinding.unbind()
 
         Glide.withSafe(viewBinding.root)
-            ?.clear(viewBinding.icon)
+            ?.clear(viewBinding.thumb)
     }
 
     companion object {
 
         fun create(parent: ViewGroup): KittyListViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val viewDataBinding: KittyListItemBinding = DataBindingUtil.inflate(layoutInflater, R.layout.kitty_list_item, parent, false)
+            val viewDataBinding: KittyListItemBinding =
+                DataBindingUtil.inflate(layoutInflater, R.layout.kitty_list_item, parent, false)
 
             return KittyListViewHolder(viewDataBinding)
         }

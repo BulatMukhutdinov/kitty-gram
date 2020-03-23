@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -26,11 +25,10 @@
         android:paddingBottom="8dp">
 
         <ImageView
-            android:id="@+id/icon"
+            android:id="@+id/thumb"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
-            android:background="@drawable/icon_background"
             app:image="@{item.thumb}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -48,17 +46,17 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintStart_toEndOf="@id/thumb"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/first_names" />
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/about"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="3"
-            android:text="@{item.about}"
             android:textSize="14sp"
+            app:htmlText="@{item.about}"
             app:layout_constraintEnd_toEndOf="@id/breed"
             app:layout_constraintStart_toStartOf="@id/breed"
             app:layout_constraintTop_toBottomOf="@id/breed"

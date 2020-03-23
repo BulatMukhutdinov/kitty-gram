@@ -30,7 +30,7 @@ class KittyListBoundGateway(driver: SqlDriver, private val httpClient: HttpClien
     }
 
     override suspend fun refresh() {
-        val updated: List<KittyResponse> = httpClient.get("http://192.168.50.227:8090/all")
+        val updated: List<KittyResponse> = httpClient.get("http://192.168.1.11:8090/all")
 
         queries.clear()
 

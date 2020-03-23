@@ -15,6 +15,7 @@ import tat.mukhutdinov.kittygram.kittyList.domain.boundary.KittyListDomain
 import tat.mukhutdinov.kittygram.kittyList.domain.model.Kitty
 import tat.mukhutdinov.kittygram.kittyList.item.KittyListAdapter
 import tat.mukhutdinov.kittygram.kittyList.item.KittyListItemBindings
+import timber.log.Timber
 import kotlin.tat.mukhutdinov.kittygram.R
 import kotlin.tat.mukhutdinov.kittygram.databinding.KittyListBinding
 
@@ -61,11 +62,14 @@ class KittyListViewModel : BaseViewModel<KittyListBinding>(), KittyListBindings 
 
         viewBinding.refresh.setOnRefreshListener {
             viewScope.launch {
-                val refreshed = domain.refresh()
-
-                viewBinding.refresh.isRefreshing = false
-
-                list.postValue(refreshed)
+                try {
+                    val refreshed = domain.refresh()
+                    list.postValue(refreshed)
+                } catch (throwable: Throwable) {
+                    Timber.e(throwable)
+                } finally {
+                    viewBinding.refresh.isRefreshing = false
+                }
             }
         }
     }
